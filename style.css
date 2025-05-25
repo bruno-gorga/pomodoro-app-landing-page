@@ -1,168 +1,148 @@
+/* Reset básico e configurações globais */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
-  color: #1c1c5b;
-  line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    background-color: #f0f2f5; /* Um cinza claro para o fundo */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
 }
 
-/* HERO (texto + formulário) */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
-  padding: 60px;
-  background-color: #ffffff;
+/* Cabeçalho */
+header {
+    background: #d9534f; /* Cor temática Pomodoro (vermelho) */
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.texto {
-  flex: 1;
-  padding-right: 40px;
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.25rem;
+    font-weight: 600;
 }
 
-.texto h1 {
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: #1c1c5b;
+header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.texto h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #1c1c5b;
+/* Conteúdo Principal */
+main {
+    flex: 1; /* Garante que o footer fique no final da página */
+    padding: 2rem 1rem; /* Espaçamento interno */
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    width: 95%; /* Responsividade */
+    margin: 2rem auto; /* Centraliza e adiciona margem superior/inferior */
 }
 
-.texto p {
-  font-size: 16px;
-  margin-bottom: 12px;
-  color: #333;
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+    gap: 25px; /* Espaço entre os itens da galeria */
+    justify-content: center; /* Centraliza os itens se houver espaço */
 }
 
-/* FORMULÁRIO */
-.formulario {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f1f3ff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.demo-item {
+    background: #ffffff; /* Fundo branco para cada item */
+    padding: 1.5rem;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    text-align: center;
+    flex-basis: calc(33.333% - 25px); /* Tenta 3 itens por linha, ajustado pelo gap */
+    min-width: 280px; /* Largura mínima para cada item */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 350px;
+.demo-item:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-form h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #1c1c5b;
+.demo-item h2 {
+    margin-bottom: 1rem;
+    color: #c94c48; /* Tom mais escuro do vermelho para os títulos dos itens */
+    font-size: 1.75rem;
+    font-weight: 500;
 }
 
-form input {
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+.demo-item img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o container */
+    height: auto; /* Mantém a proporção da imagem */
+    border: 3px solid #f0f0f0; /* Borda sutil na imagem */
+    border-radius: 8px; /* Bordas arredondadas para a imagem */
+    margin-bottom: 1rem;
+    display: block; /* Remove espaço extra abaixo da imagem */
 }
 
-form button {
-  padding: 12px;
-  background-color: #4f46e5;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.demo-item p {
+    font-size: 1rem;
+    color: #555;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante, alinhando os botões (se houver) */
 }
 
-form button:hover {
-  background-color: #3730a3;
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #333333; /* Fundo escuro para o rodapé */
+    color: #f0f2f5; /* Texto claro no rodapé */
+    font-size: 0.9rem;
 }
 
-form small {
-  margin-top: 12px;
-  font-size: 12px;
-  color: #888;
-  text-align: center;
+footer p a {
+    color: #d9534f; /* Links no rodapé com a cor temática */
+    text-decoration: none;
 }
 
-/* GALERIA */
-.product-gallery {
-  background-color: #f8f9ff;
-  padding: 60px 20px;
-  text-align: center;
+footer p a:hover {
+    text-decoration: underline;
 }
 
-.product-gallery h2 {
-  font-size: 2rem;
-  color: #1c1c3b;
-  margin-bottom: 40px;
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+    .demo-item {
+        flex-basis: calc(50% - 25px); /* 2 itens por linha em telas médias */
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    .demo-item h2 {
+        font-size: 1.5rem;
+    }
 }
 
-.gallery-grid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.gallery-item {
-  flex: 1 1 300px;
-  max-width: 300px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background: white;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-.footer {
-  background-color: #1c1c5b; /* Azul escuro do seu tema */
-  color: #efeae2; /* Cor clara para contraste */
-  padding: 20px 40px;
-  text-align: center;
-  font-size: 14px;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-nav {
-  margin-top: 8px;
-}
-
-.footer-nav a {
-  color: #efeae2;
-  margin: 0 10px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-nav a:hover {
-  color: #4f46e5; /* Cor roxa do botão para hover */
+@media (max-width: 600px) {
+    .demo-item {
+        flex-basis: 100%; /* 1 item por linha em telas pequenas */
+        margin-bottom: 25px; /* Adiciona margem inferior quando empilhado */
+    }
+    header {
+        padding: 1.5rem 1rem;
+    }
+    header h1 {
+        font-size: 1.75rem;
+    }
+    header p {
+        font-size: 1rem;
+    }
+    main {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem auto;
+    }
+    .demo-item h2 {
+        font-size: 1.3rem;
+    }
 }
